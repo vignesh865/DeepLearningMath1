@@ -10,7 +10,7 @@ def create_tensor_of_val(dimensions, val):
     specifically, it should be:
     tensor([[3., 3., 3.], [3., 3., 3.]])
     """
-    res = torch.ones(dimensions) * val  # TODO: implement this function
+    res = torch.ones(dimensions) * val
     return res
 
 
@@ -19,7 +19,7 @@ def calculate_elementwise_product(A, B):
     Calculate the elementwise product of the two tensors A and B.
     Note that the dimensions of A and B should be the same.
     """
-    res = A * B  # TODO: implement this function
+    res = A * B
     return res
 
 
@@ -34,7 +34,7 @@ def calculate_matrix_product(X, W: torch.Tensor):
           Also, it allows us to use the same function for a single neuron or multiple neurons.
          
     """
-    res = torch.matmul(X, torch.transpose(W, 0, 1))  # TODO: implement this function
+    res = torch.matmul(X, torch.transpose(W, 0, 1))
     return res
 
 
@@ -48,7 +48,7 @@ def calculate_matrix_prod_with_bias(X, W, b):
           This allows us to use a batch of inputs, and not just a single input.
           Also, it allows us to use the same function for a single neuron or multiple neurons.
        """
-    res = calculate_matrix_product(X, W) + b  # TODO: implement this function
+    res = calculate_matrix_product(X, W) + b
     return res
 
 
@@ -57,7 +57,7 @@ def calculate_activation(sum_total):
     Calculate a step function as an activation of the neuron.
     Hint: use PyTorch `heaviside` function.
     """
-    res = torch.heaviside(sum_total, torch.tensor([0.0]))  # TODO: implement this function
+    res = torch.heaviside(sum_total, torch.tensor([0.0]))
     return res
 
 
@@ -66,5 +66,5 @@ def calculate_output(X, W, b):
     Calculate the output of the neuron.
     Hint: use the functions you implemented above.
     """
-    res = calculate_activation((calculate_matrix_prod_with_bias(X, W, b)))  # TODO: implement this function
+    res = calculate_activation((calculate_matrix_prod_with_bias(X, W, b)))
     return res
